@@ -4,7 +4,6 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 
 export const signup = async (req, res) => {
     try{
-        console.log('try block');
         const {fullName, username, password, confirmPassword, gender} = req.body;
 
         if(password !== confirmPassword) {
@@ -30,7 +29,6 @@ export const signup = async (req, res) => {
             gender,
             profilePic: gender === 'male' ? boyProfilePic : girlProfilePic
         })
-        console.log('new user',newUser);
 
         if(newUser) {
 
